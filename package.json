@@ -1,0 +1,25 @@
+{
+  "name": "react-graphql-boilerplate",
+  "version": "1.0.0",
+  "description": "Basic boilerplate for React application with Webpack and Babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hraboviyvadim/react-graphql-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "babel",
+    "eslint"
+  ],
+  "author": "Vadym Grabovyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hraboviyvadim/react-graphql-boilerplate/issues"
+  },
+  "homepage": "https://github.com/hraboviyvadim/react-graphql-boilerplate#readme"
+}
