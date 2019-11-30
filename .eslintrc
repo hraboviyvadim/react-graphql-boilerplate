@@ -11,5 +11,10 @@
     "no-unused-vars": [1],
     "no-console": [1],
     "no-case-declarations": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
