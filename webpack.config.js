@@ -1,7 +1,8 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -19,13 +20,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist/'),
     publicPath: '/',
     filename: 'bundle.js',
   },

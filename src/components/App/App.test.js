@@ -11,7 +11,7 @@ describe('Unit test example', () => {
 
 describe('Snapshot test example', () => {
   it('Shallow render', () => {
-    const shallowed = shallow(<App />);
+    const shallowed = shallow(<App name="world3" />);
     expect(shallowed).toMatchSnapshot();
   });
 });

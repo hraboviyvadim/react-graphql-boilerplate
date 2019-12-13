@@ -2,6 +2,8 @@
 
 exports[`Snapshot test example Shallow render 1`] = `
 <h1>
-  Hello, world3!
+  Hello, 
+  world3
+  !
 </h1>
 `;
