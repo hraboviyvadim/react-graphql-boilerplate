@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'module-source-map',
   entry: './src/index.tsx',
   module: {
     rules: [
@@ -25,9 +27,54 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        include: path.resolve('src'),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins() {
+                return [autoprefixer];
+              },
+            },
+          },
+          'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                sourceMap: false,
+                includePaths: [path.resolve('src')],
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
+    modules: ['node_modules'],
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   output: {
