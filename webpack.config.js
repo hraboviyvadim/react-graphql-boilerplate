@@ -35,7 +35,12 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(Object.assign({}, process.env)),
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   devServer: {
     contentBase: './dist',
     hot: true,

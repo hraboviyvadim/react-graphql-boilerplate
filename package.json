@@ -4,8 +4,8 @@
   "description": "Basic boilerplate for React application with Webpack and Babel",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production",
+    "start": "NODE_ENV=development webpack-dev-server -r dotenv/config --mode development --config ./webpack.config.js",
+    "build": "NODE_ENV=production webpack -r dotenv/config --mode production",
     "test": "jest"
   },
   "repository": {
@@ -37,6 +37,8 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.3.2",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
@@ -50,6 +52,8 @@
     "prettier": "^1.19.1",
     "react-hot-loader": "^4.12.18",
     "react-test-renderer": "^16.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",

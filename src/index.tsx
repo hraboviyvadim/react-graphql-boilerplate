@@ -5,9 +5,11 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import App from './components/App/App';
+console.log(typeof process.env.CUSTOMER_ACCOUNT_GRAPHQL_ENDPOINT);
+console.log(process.env.NODE_ENV);
 
 const httpLink = createHttpLink({
-  uri: 'https://countries.trevorblades.com/',
+  uri: process.env.CUSTOMER_ACCOUNT_GRAPHQL_ENDPOINT,
 });
 
 const client = new ApolloClient({
